@@ -1,34 +1,73 @@
 package com.skilldistillery.foodtruck;
 
-import java.util.Scanner;
-
 public class FoodTruck {
 	
-	Scanner input = new Scanner(System.in);
-
+	private static int nextID = 0;
 	
-//	Create methods to assign fields to id number, Name, food type, and rating
 	
-	private int idNumber() {
-		int idNum = 0;
-		return idNum;
+	private int idNumber;
+	private String  name;
+	private String type;
+	private double rating;
+	
+	public FoodTruck(String name, String type, double rating) {
+		super();
+		this.idNumber = nextID;
+		this.name = name;
+		this.type = type;
+		this.rating = rating;
+		nextID = nextID++;
 	}
-	private String truckName() {
-		String name = "";
-		System.out.println("Please enter the Food Truck's name:");
-		name = input.next();
+
+	public int getIdNumber() {
+		return idNumber;
+	}
+
+	public void setIdNumber(int idNumber) {
+		this.idNumber = idNumber;
+	}
+
+	public String getName() {
 		return name;
 	}
-	private String foodType() {
-		String type = "";
-		System.out.println("Please enter the Food Truck's food type:");
-		type = input.next();
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getType() {
 		return type;
 	}
-	private int rating () {
-		int rating = 0;
-		System.out.println("Please enter your rating for the Food Truck:");
-		rating = input.nextInt();
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public double getRating() {
 		return rating;
 	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("FoodTruck [idNumber=");
+		builder.append(idNumber);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", type=");
+		builder.append(type);
+		builder.append(", rating=");
+		builder.append(rating);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	
+	
+
+	
 }
