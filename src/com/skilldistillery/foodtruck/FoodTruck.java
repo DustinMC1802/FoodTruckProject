@@ -1,6 +1,10 @@
 package com.skilldistillery.foodtruck;
 
+import java.util.Scanner;
+
 public class FoodTruck {
+	
+	Scanner input = new Scanner(System.in);
 
 	
 //	Create methods to assign fields to id number, Name, food type, and rating
@@ -12,6 +16,8 @@ public class FoodTruck {
 	
 	private String truckName() {
 		String name = "";
+		System.out.println("Please enter the Food Truck's name:");
+		name = input.next();
 		return name;
 		
 	}
