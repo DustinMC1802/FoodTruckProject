@@ -43,6 +43,7 @@ public class FoodTruckApp {
 		int menuChoice = sc.nextInt();
 		double ratingSum = 0;
 		double ratingAverage = 0;
+		double highestRating = 0;
 
 		if (menuChoice == 1) {
 			for (int j = 0; j < spokaneTrucks.length; j++) {
@@ -51,15 +52,22 @@ public class FoodTruckApp {
 		} else if (menuChoice == 2) {
 			for (int k = 0; k < spokaneTrucks.length; k++) {
 				double ratingSummer = spokaneTrucks[k].getRating();
-				ratingSum = ratingSum + ratingSummer;
+				System.out.println(ratingSummer);
+//				ratingSum = ratingSum + ratingSummer;
 			}
-			ratingAverage = ratingSum / spokaneTrucks.length;
-			System.out.println("The average rating is " + ratingAverage);
+//			ratingAverage = ratingSum / spokaneTrucks.length;
+//			System.out.println("The average rating is " + ratingAverage);
 
 		} else if (menuChoice == 3) {
-			
+			for (int l = 0; l < spokaneTrucks.length; l++) {
+				if (highestRating <= spokaneTrucks[l].getRating()) {
+					highestRating = spokaneTrucks[l].getRating();
+				}
+			}
+			System.out.println(highestRating);
 
 		} else if (menuChoice == 4) {
+			System.out.println("");
 
 		}
 

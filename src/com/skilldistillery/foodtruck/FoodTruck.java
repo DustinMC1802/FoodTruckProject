@@ -4,7 +4,6 @@ public class FoodTruck {
 	
 	private static int nextID = 0;
 	
-	
 	private int idNumber;
 	private String  name;
 	private String type;
@@ -12,11 +11,10 @@ public class FoodTruck {
 	
 	public FoodTruck(String name, String type, double rating) {
 		super();
-		this.idNumber = nextID;
+		this.idNumber = nextID++;
 		this.name = name;
 		this.type = type;
 		this.rating = rating;
-		nextID = nextID++;
 	}
 
 	public int getIdNumber() {
@@ -54,7 +52,7 @@ public class FoodTruck {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("FoodTruck [ idNumber = ");
+		builder.append("FoodTruck [ ID Number = ");
 		builder.append(idNumber);
 		builder.append(", name = ");
 		builder.append(name);
