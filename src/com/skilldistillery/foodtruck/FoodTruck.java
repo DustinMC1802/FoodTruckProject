@@ -4,7 +4,7 @@ public class FoodTruck {
 	
 	private static int nextID = 0;
 	
-	private int idNumber;
+	private int idNumber = 0;
 	private String  name = "";
 	private String type = "";
 	private double rating = 0;

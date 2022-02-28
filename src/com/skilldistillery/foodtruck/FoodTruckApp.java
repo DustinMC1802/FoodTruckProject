@@ -50,7 +50,7 @@ public class FoodTruckApp {
 			if (menuChoice == 1) {
 				for (int j = 0; j < spokaneTrucks.length; j++) {
 					// Need a technique to exclude the nulls
-					if (spokaneTrucks[j].getRating() > 0) {
+					if (!spokaneTrucks[j].getName().equals("null")) {
 						System.out.println(spokaneTrucks[j]);
 					}
 				}
@@ -64,21 +64,21 @@ public class FoodTruckApp {
 			} else if (menuChoice == 2) {
 				for (int k = 0; k < spokaneTrucks.length; k++) {
 					// Need a technique to exclude the nulls
-//				if () {
+					if (spokaneTrucks[k].getRating() > 0) {
+						double ratingSummer = spokaneTrucks[k].getRating();
+						ratingSum = ratingSum + ratingSummer;
+						ratingAverage = ratingSum / spokaneTrucks.length;
 
-//				}
-					double ratingSummer = spokaneTrucks[k].getRating();
-					System.out.println(ratingSummer);
-//				ratingSum = ratingSum + ratingSummer;
-				}System.out.println("Please choose from the following:");
+					}
+				}
+				System.out.println("The average rating is " + ratingAverage);
+				System.out.println("Please choose from the following:");
 				System.out.println("Press 1 to list all existing food trucks");
 				System.out.println("Press 2 to see the average rating of the food trucks");
 				System.out.println("Press 3 to display the highest rated food truck");
 				System.out.println("Press 4 to quit");
 				menuChoice = sc.nextInt();
 
-//			ratingAverage = ratingSum / spokaneTrucks.length;
-//			System.out.println("The average rating is " + ratingAverage);
 
 			} else if (menuChoice == 3) {
 				for (int l = 0; l < spokaneTrucks.length; l++) {
@@ -94,7 +94,6 @@ public class FoodTruckApp {
 				System.out.println("Press 3 to display the highest rated food truck");
 				System.out.println("Press 4 to quit");
 				menuChoice = sc.nextInt();
-
 
 			} else {
 				System.out.println("Please type a number between 1 and 4");
