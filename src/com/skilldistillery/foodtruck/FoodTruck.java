@@ -5,9 +5,9 @@ public class FoodTruck {
 	private static int nextID = 0;
 	
 	private int idNumber;
-	private String  name;
-	private String type;
-	private double rating;
+	private String  name = "";
+	private String type = "";
+	private double rating = 0;
 	
 	public FoodTruck(String name, String type, double rating) {
 		super();
