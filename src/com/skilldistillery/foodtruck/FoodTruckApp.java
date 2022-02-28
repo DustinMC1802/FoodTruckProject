@@ -11,7 +11,6 @@ public class FoodTruckApp {
 
 //Get inputs from the user to fill the spokaneTrucks array
 
-		// for loop to fill ea
 		for (int i = 0; i < 5; i++) {
 
 			System.out.println("Please enter the name of the food truck, or if you want to quit, type \"quit\" :");
@@ -33,14 +32,36 @@ public class FoodTruckApp {
 		}
 
 		System.out.println("");
-		
+
+//Print the menu options
+
 		System.out.println("Please choose from the following:");
 		System.out.println("Press 1 to list all existing food trucks");
 		System.out.println("Press 2 to see the average rating of the food trucks");
 		System.out.println("Press 3 to display the highest rated food truck");
 		System.out.println("Press 4 to quit");
-		
-		
+		int menuChoice = sc.nextInt();
+		double ratingSum = 0;
+		double ratingAverage = 0;
+
+		if (menuChoice == 1) {
+			for (int j = 0; j < spokaneTrucks.length; j++) {
+				System.out.println(spokaneTrucks[j]);
+			}
+		} else if (menuChoice == 2) {
+			for (int k = 0; k < spokaneTrucks.length; k++) {
+				double ratingSummer = spokaneTrucks[k].getRating();
+				ratingSum = ratingSum + ratingSummer;
+			}
+			ratingAverage = ratingSum / spokaneTrucks.length;
+			System.out.println("The average rating is " + ratingAverage);
+
+		} else if (menuChoice == 3) {
+			
+
+		} else if (menuChoice == 4) {
+
+		}
 
 		sc.close();
 	}
