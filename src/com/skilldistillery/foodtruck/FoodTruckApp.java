@@ -24,7 +24,6 @@ public class FoodTruckApp {
 			String name = sc.nextLine();
 
 			if (name.equals("quit")) {
-
 				break;
 			}
 
