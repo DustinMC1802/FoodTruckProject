@@ -57,7 +57,6 @@ public class FoodTruckApp {
 
 			if (menuChoice == 1) {
 				for (int j = 0; j < spokaneTrucks.length; j++) {
-					// Need a technique to exclude the nulls
 					if (spokaneTrucks[j].getRating() != 0) {
 						System.out.println(spokaneTrucks[j]);
 					}
@@ -72,12 +71,10 @@ public class FoodTruckApp {
 			} 
 			else if (menuChoice == 2) {
 				for (int k = 0; k < spokaneTrucks.length; k++) {
-					// Need a technique to exclude the nulls
 					if (spokaneTrucks[k].getRating() > 0) {
 						double ratingSummer = spokaneTrucks[k].getRating();
 						ratingSum = ratingSum + ratingSummer;
-						// .length will not work if not all five slots are filled
-						ratingAverage = ratingSum / spokaneTrucks.length;
+						ratingAverage = ratingSum / (k+1);
 
 					}
 				}
