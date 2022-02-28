@@ -1,5 +1,7 @@
 # FoodTruckProject
-## Test
-#### Test
-## Test
-#### Test
+## Overview
+#### This program was designed to have two main components. The first component allows a user to enter up to five entries for food trucks that included sections for the name of the truck, the type of food they serve, their rating, and an automatically generated serial number. The second component allows a user to access a menu which will give them the choice of one of four options. The first option displays all of the food trucks entered with their name, food type, rating, and serial number. The second option displays the average rating of all the food trucks entered. The third option shows the name of the food truck that has the highest rating. Finally the fourth option allows the user to exit the program.
+## Techniques Used
+#### New for this project was diving into the world of object oriented programming. I moved away from using public static methods as a default, and began incorporating public classes with private data as objects. This required me to use "getters" and "setters," constructors, and arrays to make the object useable to my main method.
+## Lessons learned
+#### Through this exercise, I was able to get more familiar with how getters and setters, and constructors work. However, I feel like my code is sloppy because I was not able to incorporate different methods in my FoodTruckApp Class and as a result there is a lot of repeated code.
