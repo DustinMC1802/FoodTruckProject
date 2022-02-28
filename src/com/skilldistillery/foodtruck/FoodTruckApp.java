@@ -8,14 +8,13 @@ public class FoodTruckApp {
 		Scanner sc = new Scanner(System.in);
 
 		FoodTruck spokaneTrucks[] = new FoodTruck[5];
-		
+
 //Food truck arrays initialized to return values instead of null
 		spokaneTrucks[0] = new FoodTruck("", "", 0);
 		spokaneTrucks[1] = new FoodTruck("", "", 0);
 		spokaneTrucks[2] = new FoodTruck("", "", 0);
 		spokaneTrucks[3] = new FoodTruck("", "", 0);
 		spokaneTrucks[4] = new FoodTruck("", "", 0);
-		
 
 //Get inputs from the user to fill the spokaneTrucks array
 
@@ -44,7 +43,8 @@ public class FoodTruckApp {
 //Print the menu options
 		double ratingSum = 0;
 		double ratingAverage = 0;
-		double highestRating = 0;
+		double higherRating = 0;
+		String highestRating = "";
 
 		System.out.println("Please choose from the following:");
 		System.out.println("Press 1 to list all existing food trucks");
@@ -68,13 +68,12 @@ public class FoodTruckApp {
 				System.out.println("Press 4 to quit");
 				menuChoice = sc.nextInt();
 
-			} 
-			else if (menuChoice == 2) {
+			} else if (menuChoice == 2) {
 				for (int k = 0; k < spokaneTrucks.length; k++) {
 					if (spokaneTrucks[k].getRating() > 0) {
 						double ratingSummer = spokaneTrucks[k].getRating();
 						ratingSum = ratingSum + ratingSummer;
-						ratingAverage = ratingSum / (k+1);
+						ratingAverage = ratingSum / (k + 1);
 
 					}
 				}
@@ -86,21 +85,18 @@ public class FoodTruckApp {
 				System.out.println("Press 4 to quit");
 				menuChoice = sc.nextInt();
 
-
-			} 
-			else if (menuChoice == 3) {
+			} else if (menuChoice == 3) {
 				for (int l = 0; l < spokaneTrucks.length; l++) {
-//					// Need a technique to exlude the nulls
-					if (spokaneTrucks[l].getRating() < spokaneTrucks[l+1].getRating()) {
-						System.out.println(spokaneTrucks[l+1].getName());
-						
+					if (spokaneTrucks[l].getRating() > 0) {
+						if (spokaneTrucks[l].getRating() > higherRating) {
+							higherRating = spokaneTrucks[l].getRating();
+						} else if (spokaneTrucks[l].getRating() < higherRating) {
+							continue;
+						}
+						highestRating = spokaneTrucks[l].getName();
 					}
-					else {
-						System.out.println(spokaneTrucks[l].getName());
-					}
-					
 				}
-				
+
 				System.out.println("The highest rated restaurant is " + highestRating);
 				System.out.println("Please choose from the following:");
 				System.out.println("Press 1 to list all existing food trucks");
@@ -109,8 +105,7 @@ public class FoodTruckApp {
 				System.out.println("Press 4 to quit");
 				menuChoice = sc.nextInt();
 
-			} 
-			else {
+			} else {
 				System.out.println("Please type a number between 1 and 4");
 				System.out.println("Please choose from the following:");
 				System.out.println("Press 1 to list all existing food trucks");
